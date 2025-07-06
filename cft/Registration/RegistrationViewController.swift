@@ -169,6 +169,7 @@ final class RegistrationViewController: UIViewController, RegistrationViewProtoc
         switch field {
         case .name:
             if message.isEmpty {
+                nameErrorLabel.text = nil
                 nameErrorLabel.isHidden = true
             } else {
                 nameErrorLabel.text = message
@@ -231,10 +232,9 @@ final class RegistrationViewController: UIViewController, RegistrationViewProtoc
     }
 }
 
-// MARK: - UITextFieldDelegate
 extension RegistrationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-} 
+}
